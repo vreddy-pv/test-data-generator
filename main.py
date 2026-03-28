@@ -13,8 +13,10 @@ if __name__ == '__main__':
     # Get the directory of the main.py script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     schema_path = os.path.join(script_dir, 'sample_schema.sql')
-    output_path = os.path.join(script_dir, f'test_data_{num_rows}.sql')
+    output_sql_path = os.path.join(script_dir, f'test_data_{num_rows}.sql')
+    output_excel_path = os.path.join(script_dir, f'test_data_{num_rows}.xlsx')
 
     generator = TestDataGenerator(schema_path)
     generator.generate_test_data(num_rows=num_rows)
-    generator.write_to_sql_file(output_path)
+    generator.write_to_sql_file(output_sql_path)
+    generator.write_to_excel_file(output_excel_path)

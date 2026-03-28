@@ -10,6 +10,7 @@ This is a Python-based agent that generates realistic test data from an SQL sche
 -   **H2 Database Support**: The initial version is designed to work with H2 database syntax.
 -   **Foreign Key Awareness**: Has a basic understanding of foreign key relationships to generate consistent data.
 -   **Customizable**: Allows you to specify the number of rows to generate.
+-   **Excel Output**: Generates an Excel file with each table on a separate sheet.
 
 ## Setup
 
@@ -43,7 +44,7 @@ To generate test data, you can use the `run.sh` script in the `scripts` director
 
 -   `[number_of_rows]` is an optional argument to specify the number of rows to generate for each table. If not provided, it defaults to 10.
 
-This will generate a SQL file named `test_data_[number_of_rows].sql` in the `test-data-generator` directory, which you can then use to populate your database.
+This will generate a SQL file named `test_data_[number_of_rows].sql` and an Excel file named `test_data_[number_of_rows].xlsx` in the `test-data-generator` directory, which you can then use to populate your database or for other testing purposes.
 
 ## How It Works
 

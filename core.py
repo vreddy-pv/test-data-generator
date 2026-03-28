@@ -1,4 +1,5 @@
 import sqlparse
+import pandas as pd
 from faker import Faker
 
 class TestDataGenerator:
@@ -95,4 +96,10 @@ class TestDataGenerator:
                     columns = ', '.join(row.keys())
                     values = ', '.join([f"'{v}'" if isinstance(v, str) else str(v) for v in row.values()])
                     f.write(f"INSERT INTO {table_name} ({columns}) VALUES ({values});\n")
+
+    def write_to_excel_file(self, output_file):
+        with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
+            for table_name, rows in self.generated_data.items():
+                df = pd.DataFrame(rows)
+                df.to_excel(writer, sheet_name=table_name, index=False)
         print(f'Test data written to {output_file}')
