@@ -2,3 +2,4 @@ Faker
 sqlparse
 pandas
 openpyxl
+sql_metadata

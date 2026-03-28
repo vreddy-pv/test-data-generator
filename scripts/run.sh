@@ -1,25 +1,26 @@
 #!/bin/bash
 
-# run.sh
+# Default number of rows
+NUM_ROWS=${1:-10}
 
-# This script demonstrates how to use the test data generator.
-
-NUM_ROWS=${1:-10} # Default to 10 rows if no argument is provided
-
-VENV_PATH="../.venv"
-
-if [ ! -d "$VENV_PATH" ]; then
-    echo "Virtual environment not found. Please run the setup instructions in README.md"
-    exit 1
-fi
-
-# Activate the virtual environment
-if [ -f "$VENV_PATH/bin/activate" ]; then
-    source "$VENV_PATH/bin/activate"
-else
-    # For Windows
-    source "$VENV_PATH/Scripts/activate"
+# Activate virtual environment if it exists
+if [ -d ".venv" ]; then
+  echo "Activating virtual environment..."
+  source .venv/bin/activate
+elif [ -d "../.venv" ]; then
+    echo "Activating virtual environment..."
+    source "../.venv/bin/activate"
 fi
 
 
-python ../main.py $NUM_ROWS
+# Get the absolute path to the project root, which is one level up from the scripts directory
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# Run the main Python script using an absolute path
+echo "Generating $NUM_ROWS rows of test data..."
+python "$PROJECT_ROOT/main.py" "$NUM_ROWS"
+
+echo "\nData generation complete."
+echo "- SQL output: $PROJECT_ROOT/test_data_${NUM_ROWS}.sql"
+echo "- Excel output: $PROJECT_ROOT/test_data_${NUM_ROWS}.xlsx"

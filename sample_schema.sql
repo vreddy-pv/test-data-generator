@@ -1,11 +1,19 @@
 -- sample_schema.sql
 
+CREATE TABLE customers (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+
 CREATE TABLE users (
     id INT PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email VARCHAR(100),
-    created_at TIMESTAMP
+    created_at TIMESTAMP,
+    customer_id INT,
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
 );
 
 CREATE TABLE products (
