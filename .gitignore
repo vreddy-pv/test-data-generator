@@ -11,5 +11,8 @@ __pycache__/
 .idea/
 .vscode/
 
+# Local Claude Code settings
+.claude/settings.local.json
+
 # Test data
 _test_data_*.sql

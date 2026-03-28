@@ -1,0 +1,11 @@
+{
+    "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/docs/claude-json-schema.json",
+    "name": "Run Test Data Generator",
+    "description": "Runs the test data generator to create SQL and Excel files based on the project schema.",
+    "invocations": [
+        {
+            "type": "command",
+            "command": "python \"${CLAUDE_SKILL_DIR}/run_generator.py\" {{args}}"
+        }
+    ]
+}
