@@ -1,0 +1,15 @@
+INSERT INTO users (id, first_name, last_name, email, created_at) VALUES (1, 'Theresa Foster', 'John Wheeler', 'jesuscollier@example.net', 2020-12-02 05:34:22);
+INSERT INTO users (id, first_name, last_name, email, created_at) VALUES (2, 'Courtney Lara', 'David Carrillo', 'andres98@example.com', 2025-09-18 13:26:01);
+INSERT INTO users (id, first_name, last_name, email, created_at) VALUES (3, 'Bethany Glass', 'Chelsea Heath', 'charles35@example.com', 2024-11-02 09:37:27);
+INSERT INTO users (id, first_name, last_name, email, created_at) VALUES (4, 'Eric Nolan', 'Richard Jacobson', 'jessica39@example.org', 2020-12-12 22:23:55);
+INSERT INTO users (id, first_name, last_name, email, created_at) VALUES (5, 'Laura Taylor', 'Julie Oliver', 'josephhorn@example.net', 2020-10-23 22:42:01);
+INSERT INTO products (id, name, price) VALUES (1, 'Ryan Brooks', 807.58);
+INSERT INTO products (id, name, price) VALUES (2, 'Andrew Green', 356.27);
+INSERT INTO products (id, name, price) VALUES (3, 'Bradley Hoffman', 442.79);
+INSERT INTO products (id, name, price) VALUES (4, 'Benjamin Nguyen', 187.80);
+INSERT INTO products (id, name, price) VALUES (5, 'Crystal Smith', 222.11);
+INSERT INTO orders (id, user_id, product_id, quantity, order_date) VALUES (1, 1, 4, 615, 2023-02-23);
+INSERT INTO orders (id, user_id, product_id, quantity, order_date) VALUES (2, 2, 5, 284, 2021-02-04);
+INSERT INTO orders (id, user_id, product_id, quantity, order_date) VALUES (3, 1, 3, 583, 2022-01-03);
+INSERT INTO orders (id, user_id, product_id, quantity, order_date) VALUES (4, 1, 3, 242, 2022-06-02);
+INSERT INTO orders (id, user_id, product_id, quantity, order_date) VALUES (5, 3, 2, 53, 2022-05-24);
